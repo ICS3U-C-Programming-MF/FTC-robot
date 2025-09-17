@@ -87,7 +87,7 @@ public class Program extends LinearOpMode {
         frontLeftMotor.setPower(1);
         sleep(1000);
         frontLeftMotor.setPower(0);
-          
+        
         frontRightMotor.setPower(1);
         sleep(1000);
         frontRightMotor.setPower(0);
@@ -99,6 +99,7 @@ public class Program extends LinearOpMode {
         rearRightMotor.setPower(1);
         sleep(1000);
         rearRightMotor.setPower(0);
+        
       
       while (opModeIsActive()) {
         // Put loop blocks here
@@ -108,16 +109,32 @@ public class Program extends LinearOpMode {
         double frontRightMotorPower = 0;
         double rearLeftMotorPower = 0;
         double rearRightMotorPower = 0;
+        double threshold = 0.2;
+        double target = 1;
         
         // left stick to go forward, and right stick to turn.
         double drive = -gamepad1.left_stick_y;
         double turn  =  gamepad1.right_stick_x;
         frontLeftMotorPower  = Range.clip(drive + turn, -1.0, 1.0);
         frontRightMotorPower = Range.clip(drive - turn, -1.0, 1.0);
-
+        
+        if (Math.abs(gamepad1.left_stick_y + target) < threshold ) {
+            //moves are implement below
+            frontLeftMotor.setPower(1);
+        } else; {
+            frontLeftMotor.setPower(0);
+        }
+        
+        if (Math.abs(gamepad1.right_stick_y - target) < threshold ) {
+            //moves are implement below
+            frontLeftMotor.setPower(1);
+        } else; {
+            frontLeftMotor.setPower(0);
+        }
+        
         // Show the elapsed game time, wheel power, and Left/Right stick Pos.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
-        telemetry.addData ("A button", gamepad1.a);
+        telemetry.addData ("x button", gamepad1.x);
         telemetry.addData ("Right Stick Pos", gamepad1.left_stick_y);
         telemetry.addData ("Left Stick Pos", gamepad1.right_stick_x);
         telemetry.addData("Motors", "front left (%.2f), front right (%.2f)", frontLeftMotorPower, frontRightMotorPower);
