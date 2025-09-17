@@ -119,17 +119,33 @@ public class Program extends LinearOpMode {
         frontRightMotorPower = Range.clip(drive - turn, -1.0, 1.0);
         
         if (Math.abs(gamepad1.left_stick_y + target) < threshold ) {
-            //moves are implement below
+
+            // Move Straight
             frontLeftMotor.setPower(1);
-        } else; {
-            frontLeftMotor.setPower(0);
-        }
-        
-        if (Math.abs(gamepad1.right_stick_y - target) < threshold ) {
-            //moves are implement below
+            frontRightMotor.setPower(-1);
+
+        } else if (Math.abs(gamepad1.left_stick_y + target) < threshold ) {
+
+            // Move Backwards
+            frontLeftMotor.setPower(-1);
+            frontRightMotor.setPower(1);
+
+        } else if (Math.abs(gamepad1.right_stick_x + target) < threshold ) {
+
+            // Turn Right
             frontLeftMotor.setPower(1);
-        } else; {
+            frontRightMotor.setPower(-1);
+
+        } else if (Math.abs(gamepad1.right_stick_x + target) < threshold ) {
+
+            // Turn Left
+            frontLeftMotor.setPower(-1);
+            frontRightMotor.setPower(1);
+
+        } else {
+
             frontLeftMotor.setPower(0);
+
         }
         
         // Show the elapsed game time, wheel power, and Left/Right stick Pos.
