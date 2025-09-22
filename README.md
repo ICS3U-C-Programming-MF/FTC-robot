@@ -8,11 +8,11 @@
 
 
 ## Table of Contents
-* [About Us](https://github.com/ICS3U-C-Programming-MF/FTC-robot/edit/main/README.md#about-us)
-* [About Maximiliano Fairman](https://github.com/ICS3U-C-Programming-MF/FTC-robot/edit/main/README.md#about-maximiliano-fairman)
-* [About Logan T Connors](https://github.com/ICS3U-C-Programming-MF/FTC-robot/edit/main/README.md#about-logan-t-connors)
-* [Why We Are Building A Robot](https://github.com/ICS3U-C-Programming-MF/FTC-robot/edit/main/README.md#why-we-are-building-a-robot)
-* [Our Mission](https://github.com/ICS3U-C-Programming-MF/FTC-robot/edit/main/README.md#our-mission)
+* [About Us](#about-us)
+* [About Maximiliano Fairman](#about-maximiliano-fairman)
+* [About Logan T Connors](#about-logan-t-connors)
+* [Why We Are Building A Robot](#why-we-are-building-a-robot)
+* [Our Mission](#our-mission)
 
 ## About Us
 My partner, Maximiliano Fairman, and I, Logan T Connors, will be programming every part of our group's robot.
