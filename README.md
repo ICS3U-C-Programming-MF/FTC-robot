@@ -1,5 +1,10 @@
 # FTC 2025-2026 Decode Challenge
 
+## Link to Our Website and Socials
+* [Our Website](https://sites.google.com/stu.ocsb.ca/carlgustaftftc)
+* [Our Instagram Page](https://www.instagram.com/carlgustafftc/#)
+
+
 ## Table of Contents
 * [About Us](https://github.com/ICS3U-C-Programming-MF/FTC-robot/edit/main/README.md#about-us)
 * [About Maximiliano Fairman](https://github.com/ICS3U-C-Programming-MF/FTC-robot/edit/main/README.md#about-maximiliano-fairman)
@@ -12,7 +17,7 @@ Our Group is called Carl Gustaf, we like to say "We will blow our competitors ou
 
 
 ## About Maximiliano Fairman
-Hey, I’m max, one of the programmers working on the robot for the FTC competition. I’m so far having a lot of fun with this as it’s a great experience. Yet the better experience is working with amazing people to create a working robot. Especially one that YOU programmed, it’s Also the perfect  feeling, to see it work when you spent all that time on it
+Hey, I’m max, one of the programmers working on the robot for the FTC competition. I’m so far having a lot of fun with this as it’s a great experience. Yet the better experience is working with amazing people to create a working robot. Especially one that YOU programmed, it’s Also the perfect feeling, to see it work when you spent all that time on it
 
 
 ## About Logan T Connors
@@ -21,3 +26,8 @@ My name is Logan T. Connors. I’m a student, and I attend Immaculata High Schoo
 
 ## Why We Are Building A Robot
 We are building a Robot for this year's FTC 2025-2026 Decode Challenge.
+
+## Our Mission
+> Our mission is to inspire innovation and excellence through robotics by developing technical skills, problem-solving abilities, and teamwork. We strive to design, build, and program robots that challenge us , prepare us for future opportunities in STEM, and spark curiosity and creativity in ourselves and others.
+
+ 
