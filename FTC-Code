@@ -35,12 +35,6 @@ public class Program extends LinearOpMode {
         frontRightMotor = hardwareMap.get(DcMotor.class, "frontRightMotor");
         rearLeftMotor = hardwareMap.get(DcMotor.class, "rearLeftMotor");
         rearRightMotor = hardwareMap.get(DcMotor.class, "rearRightMotor");
-
-        // Create a RobotHardware object to be used to access robot hardware.
-        // Prefix any hardware functions with "robot." to access this class.
-        RobotHardware robot = new RobotHardware(this);
-        frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
-        frontRightMotor.setDirection(DcMotor.Direction.FORWARD);
       
       // Put initialization blocks here
       waitForStart();
