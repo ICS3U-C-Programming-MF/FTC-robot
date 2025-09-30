@@ -141,6 +141,9 @@ public class Program extends LinearOpMode {
         telemetry.addData ("Down Dpad", gamepad1.dpad_down);
         telemetry.addData ("Right Dpad", gamepad1.dpad_right);
         telemetry.addData ("Left Dpad", gamepad1.dpad_left);
+
+        // Update everytime it loops
+        telemetry.update ();
         
       }
     }
