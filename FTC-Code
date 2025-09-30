@@ -81,17 +81,38 @@ public class Program extends LinearOpMode {
     
        }
 
-        if (Math.abs(gamepad1.right_stick_x + target) < threshold ) {
+        if ((Math.abs(gamepad1.right_stick_x + target) < threshold ) && (Math.abs(gamepad1.left_stick_y + target) < threshold )) {
     
             // Turn Left
-            frontLeftMotor.setPower(-0.5);
-            frontRightMotor.setPower(-1);
+            frontLeftMotor.setPower(-1);
+            frontRightMotor.setPower(-0.5);
+    
+        } else if ((Math.abs(gamepad1.right_stick_x - target) < threshold ) && (Math.abs(gamepad1.left_stick_y - target) < threshold )) {
+    
+            // Turn Right
+            frontLeftMotor.setPower(1);
+            frontRightMotor.setPower(0.5);
+    
+        } else {
+    
+            frontLeftMotor.setPower(0);
+            frontRightMotor.setPower(0);
+            rearLeftMotor.setPower(0);
+            rearRightMotor.setPower(0);
+    
+       }
+
+       if (Math.abs(gamepad1.right_stick_x - target) < threshold ) {
+    
+            // Turn Right
+            frontLeftMotor.setPower(-1);
+            frontRightMotor.setPower(-0);
     
         } else if (Math.abs(gamepad1.right_stick_x - target) < threshold ) {
     
             // Turn Right
             frontLeftMotor.setPower(1);
-            frontRightMotor.setPower(0.5);
+            frontRightMotor.setPower(0);
     
         } else {
     
