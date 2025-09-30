@@ -59,9 +59,7 @@ public class Program extends LinearOpMode {
       
       while (opModeIsActive()) {
         // Put loop blocks here
-
-        telemetry.update();
-
+        
         if (Math.abs(gamepad1.left_stick_y + target) < threshold ) {
     
             // Move Straight
@@ -73,18 +71,27 @@ public class Program extends LinearOpMode {
             // Move Backwards
             frontLeftMotor.setPower(-1);
             frontRightMotor.setPower(1);
+
+        } else {
     
-        } else if (Math.abs(gamepad1.right_stick_x + target) < threshold ) {
+            frontLeftMotor.setPower(0);
+            frontRightMotor.setPower(0);
+            rearLeftMotor.setPower(0);
+            rearRightMotor.setPower(0);
     
-            // Turn Right
-            frontLeftMotor.setPower(-1);
+       }
+
+        if (Math.abs(gamepad1.right_stick_x + target) < threshold ) {
+    
+            // Turn Left
+            frontLeftMotor.setPower(-0.5);
             frontRightMotor.setPower(-1);
     
         } else if (Math.abs(gamepad1.right_stick_x - target) < threshold ) {
     
-            // Turn Left
+            // Turn Right
             frontLeftMotor.setPower(1);
-            frontRightMotor.setPower(1);
+            frontRightMotor.setPower(0.5);
     
         } else {
     
@@ -95,13 +102,12 @@ public class Program extends LinearOpMode {
     
        }
         
- // Show the elapsed run time, motor pos, and Left/Right stick pos.
+ // Show the elapsed game time, wheel power, and Left/Right stick Pos.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
         telemetry.addData("Motors", "front left (%.2f), front right (%.2f)", frontLeftMotorPower, frontRightMotorPower);
         telemetry.addData("Motors", "rear left (%.2f), rear right (%.2f)", rearLeftMotorPower, rearRightMotorPower);
         telemetry.addData ("Right Stick Pos", gamepad1.left_stick_y);
         telemetry.addData ("Left Stick Pos", gamepad1.right_stick_x);
-        telemetry.addData ("");
 
         // Gamepad A, Y, B, and X buttons
         telemetry.addData ("A button", gamepad1.a);
