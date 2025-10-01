@@ -13,138 +13,129 @@ import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="Control Robot", group="Linear OpMode")
 public class Program extends LinearOpMode {
-    
-    private ElapsedTime runtime = new ElapsedTime();
-    private DcMotor frontLeftMotor;
-    private DcMotor frontRightMotor;
-    private DcMotor rearLeftMotor;
-    private DcMotor rearRightMotor;
-    
-    // Variables
-    double frontLeftMotorPower = 0;
-    double frontRightMotorPower = 0;
-    double rearLeftMotorPower = 0;
-    double rearRightMotorPower = 0;
-    double threshold = 0.2;
-    double target = 1;
+	
+	private ElapsedTime runtime = new ElapsedTime();
+	private DcMotor frontLeftMotor;
+	private DcMotor frontRightMotor;
+	private DcMotor rearLeftMotor;
+	private DcMotor rearRightMotor;
+	
+	// Variables
+	double frontLeftMotorPower = 0;
+	double frontRightMotorPower = 0;
+	double rearLeftMotorPower = 0;
+	double rearRightMotorPower = 0;
+	double threshold = 0.2;
+	double target = 1;
 
 @Override
-    public void runOpMode() {
-        
-        frontLeftMotor = hardwareMap.get(DcMotor.class, "frontLeftMotor");
-        frontRightMotor = hardwareMap.get(DcMotor.class, "frontRightMotor");
-        rearLeftMotor = hardwareMap.get(DcMotor.class, "rearLeftMotor");
-        rearRightMotor = hardwareMap.get(DcMotor.class, "rearRightMotor");
-      
-      // Put initialization blocks here
-      waitForStart();
-      
-      // Put run blocks here
-        frontLeftMotor.setPower(1);
-        sleep(500);
-        frontLeftMotor.setPower(0);
-        
-        frontRightMotor.setPower(1);
-        sleep(500);
-        frontRightMotor.setPower(0);
-        
-        rearLeftMotor.setPower(1);
-        sleep(500);
-        rearLeftMotor.setPower(0);
-          
-        rearRightMotor.setPower(1);
-        sleep(500);
-        rearRightMotor.setPower(0);
-        
-      
-      while (opModeIsActive()) {
-        // Put loop blocks here
-        
-        if (Math.abs(gamepad1.left_stick_y + target) < threshold ) {
-    
-            // Move Straight
-            frontLeftMotor.setPower(1);
-            frontRightMotor.setPower(-1);
-    
-        } else if (Math.abs(gamepad1.left_stick_y - target) < threshold ) {
-    
-            // Move Backwards
-            frontLeftMotor.setPower(-1);
-            frontRightMotor.setPower(1);
+	public void runOpMode() {
+		
+		frontLeftMotor = hardwareMap.get(DcMotor.class, "frontLeftMotor");
+		frontRightMotor = hardwareMap.get(DcMotor.class, "frontRightMotor");
+		rearLeftMotor = hardwareMap.get(DcMotor.class, "rearLeftMotor");
+		rearRightMotor = hardwareMap.get(DcMotor.class, "rearRightMotor");
+	  
+	  // Put initialization blocks here
+	  waitForStart();
+	  
+	  // Put run blocks here
+	
+	  
+	  while (opModeIsActive()) {
+		// Put loop blocks here
+		
+		if (Math.abs(gamepad1.left_stick_y + target) < threshold ) {
+	
+			// Move Straight
+			frontLeftMotor.setPower(1);
+			frontRightMotor.setPower(-1);
+	
+		} else if (Math.abs(gamepad1.left_stick_y - target) < threshold ) {
+	
+			// Move Backwards
+			frontLeftMotor.setPower(-1);
+			frontRightMotor.setPower(1);
 
-        } else {
-    
-            frontLeftMotor.setPower(0);
-            frontRightMotor.setPower(0);
-            rearLeftMotor.setPower(0);
-            rearRightMotor.setPower(0);
-    
-       }
+		} else {
+	
+			frontLeftMotor.setPower(0);
+			frontRightMotor.setPower(0);
+			rearLeftMotor.setPower(0);
+			rearRightMotor.setPower(0);
+	
+	   }
 
-        if ((Math.abs(gamepad1.right_stick_x + target) < threshold ) && (Math.abs(gamepad1.left_stick_y + target) < threshold )) {
-    
-            // Turn Left while driving
-            frontLeftMotor.setPower(-1);
-            frontRightMotor.setPower(-0.5);
-    
-        } else if ((Math.abs(gamepad1.right_stick_x - target) < threshold ) && (Math.abs(gamepad1.left_stick_y - target) < threshold )) {
-    
-            // Turn Right while driving
-            frontLeftMotor.setPower(1);
-            frontRightMotor.setPower(0.5);
-    
-        } else {
-    
-            frontLeftMotor.setPower(0);
-            frontRightMotor.setPower(0);
-            rearLeftMotor.setPower(0);
-            rearRightMotor.setPower(0);
-    
-       }
+		if ((Math.abs(gamepad1.right_stick_x + target) < threshold ) && (Math.abs(gamepad1.left_stick_y + target) < threshold )) {
+	
+			// Turn Left while driving
+			frontLeftMotor.setPower(-1);
+			frontRightMotor.setPower(-0.5);
+	
+		} else if ((Math.abs(gamepad1.right_stick_x - target) < threshold ) && (Math.abs(gamepad1.left_stick_y - target) < threshold )) {
+	
+			// Turn Right while driving
+			frontLeftMotor.setPower(1);
+			frontRightMotor.setPower(0.5);
+	
+		} else {
+	
+			frontLeftMotor.setPower(0);
+			frontRightMotor.setPower(0);
+			rearLeftMotor.setPower(0);
+			rearRightMotor.setPower(0);
+	
+	   }
 
-       if (Math.abs(gamepad1.right_stick_y + target) < threshold ) {
-    
-            // Turn Right while still
-            frontLeftMotor.setPower(-1);
-            frontRightMotor.setPower(-0);
-    
-        } else if (Math.abs(gamepad1.right_stick_y - target) < threshold ) {
-    
-            // Turn Right while still
-            frontLeftMotor.setPower(-0);
-            frontRightMotor.setPower(-1);
-    
-        } else {
-    
-            frontLeftMotor.setPower(0);
-            frontRightMotor.setPower(0);
-            rearLeftMotor.setPower(0);
-            rearRightMotor.setPower(0);
-    
-       }
-        
+	   if (Math.abs(gamepad1.right_stick_x + target) < threshold ) {
+	
+			// Turn Right while still
+			frontLeftMotor.setPower(-1);
+			frontRightMotor.setPower(-0);
+	
+		} else if (Math.abs(gamepad1.right_stick_x - target) < threshold ) {
+	
+			// Turn Right while still
+			frontLeftMotor.setPower(-0);
+			frontRightMotor.setPower(-1);
+	
+		} else {
+	
+			frontLeftMotor.setPower(0);
+			frontRightMotor.setPower(0);
+			rearLeftMotor.setPower(0);
+			rearRightMotor.setPower(0);
+	
+	   }
+		
  // Show the elapsed game time, wheel power, and Left/Right stick Pos.
-        telemetry.addData("Status", "Run Time: " + runtime.toString());
-        telemetry.addData("Motors", "front left (%.2f), front right (%.2f)", frontLeftMotorPower, frontRightMotorPower);
-        telemetry.addData("Motors", "rear left (%.2f), rear right (%.2f)", rearLeftMotorPower, rearRightMotorPower);
-        telemetry.addData ("Right Stick Pos", gamepad1.left_stick_y);
-        telemetry.addData ("Left Stick Pos", gamepad1.right_stick_x);
+		telemetry.addData("Status", "Run Time: " + runtime.toString());
+		telemetry.addData("Motors", "front left (%.2f), front right (%.2f)", frontLeftMotorPower, frontRightMotorPower);
+		telemetry.addData("Motors", "rear left (%.2f), rear right (%.2f)", rearLeftMotorPower, rearRightMotorPower);
+		telemetry.addData ("Right Stick Pos", gamepad1.left_stick_y);
+		telemetry.addData ("Left Stick Pos", gamepad1.right_stick_x);
 
-        // Gamepad A, Y, B, and X buttons
-        telemetry.addData ("A button", gamepad1.a);
-        telemetry.addData ("Y button", gamepad1.y);
-        telemetry.addData ("B button", gamepad1.b);
-        telemetry.addData ("X button", gamepad1.x);
+		// Gamepad A, Y, B, and X buttons
+		telemetry.addData ("A button", gamepad1.a);
+		telemetry.addData ("Y button", gamepad1.y);
+		telemetry.addData ("B button", gamepad1.b);
+		telemetry.addData ("X button", gamepad1.x);
 
-        // Gamepad Dpad
-        telemetry.addData ("Up Dpad", gamepad1.dpad_up);
-        telemetry.addData ("Down Dpad", gamepad1.dpad_down);
-        telemetry.addData ("Right Dpad", gamepad1.dpad_right);
-        telemetry.addData ("Left Dpad", gamepad1.dpad_left);
-
-        // Update everytime it loops
-        telemetry.update ();
-        
-      }
-    }
+		// Gamepad Dpad
+		telemetry.addData ("Up Dpad", gamepad1.dpad_up);
+		telemetry.addData ("Down Dpad", gamepad1.dpad_down);
+		telemetry.addData ("Right Dpad", gamepad1.dpad_right);
+		telemetry.addData ("Left Dpad", gamepad1.dpad_left);
+		
+		//Triggers 
+		telemetry.addData ("Left trigger", gamepad1.left_trigger);
+		telemetry.addData ("Right trigger", gamepad1.right_trigger);
+		telemetry.addData ("Left bumper", gamepad1.left_bumper);
+		telemetry.addData ("Right bumper", gamepad1.right_bumper);
+		
+		// Update everytime it loops
+		telemetry.update ();
+		
+	  }
+	}
 }
