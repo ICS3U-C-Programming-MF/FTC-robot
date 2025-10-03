@@ -57,7 +57,7 @@ public class Program extends LinearOpMode {
 
         } else {
     
-            // Stopped
+            // Stopped Motor
             frontLeftMotor.setPower(0);
             frontRightMotor.setPower(0);
             rearLeftMotor.setPower(0);
@@ -91,7 +91,7 @@ public class Program extends LinearOpMode {
     
         } else {
     
-            // Stopped
+            // Stopped Motor
             frontLeftMotor.setPower(0);
             frontRightMotor.setPower(0);
             rearLeftMotor.setPower(0);
@@ -131,15 +131,15 @@ public class Program extends LinearOpMode {
             frontLeftMotor.setPower(frontLeftMotorPower) - 0.1;
 			frontRightMotor.setPower(frontRightMotorPower) - 0.1;
 
-       } else if (gamepad1.dpad_left.wasJustPressed()) {
+       // } else if (gamepad1.dpad_left.wasJustPressed()) {
 
-            //frontLeftMotor.setPower(frontLeftMotorPower) + 0.1;
-			//frontLeftMotor.setPower(frontRightMotorPower) + 0.1;
+            // frontLeftMotor.setPower(frontLeftMotorPower) + 0.1;
+			// frontLeftMotor.setPower(frontRightMotorPower) + 0.1;
 
-       } else if (gamepad1.dpad_right.wasJustPressed()) {
+       // } else if (gamepad1.dpad_right.wasJustPressed()) {
 
-			//frontLeftMotor.setPower(frontLeftMotorPower) - 0.1;
-			//frontLeftMotor.setPower(frontRightMotorPower) - 0.1;
+			// frontLeftMotor.setPower(frontLeftMotorPower) - 0.1;
+			// frontLeftMotor.setPower(frontRightMotorPower) - 0.1;
 
        } else {
 
