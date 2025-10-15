@@ -2,8 +2,6 @@
 
 ## Link to Our Website and Socials
 * [Our Website](https://sites.google.com/stu.ocsb.ca/carlgustaftftc)
-> [!CAUTION]
-> The Link to our Website is currently down. We are working to fix this.
 * [Our Instagram Page](https://www.instagram.com/carlgustafftc/#)
 
 
